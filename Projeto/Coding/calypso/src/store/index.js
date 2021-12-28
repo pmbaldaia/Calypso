@@ -5,17 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    gifts: localStorage.gifts ? JSON.parse(localStorage.gifts) : [],
-    users: localStorage.users
-      ? JSON.parse(localStorage.users)
-      : [
-          {
-            username: "painatal",
-            password: "painatal",
-            type: "admin",
-            location: "laponia",
-          },
-        ],
+    quizzes: localStorage.quizzes ? JSON.parse(localStorage.quizzes) : [],
+    users: localStorage.users ?
+      JSON.parse(localStorage.users) : [{
+        username: "admin",
+        password: "admin",
+        email: "admin@admin.pt",
+        type: "admin",
+        location: "admin",
+      }, ],
     loggedUser: null,
   },
   getters: {
@@ -26,10 +24,10 @@ export default new Vuex.Store({
     isUsernameAvailable: (state) => (username) =>
       state.users.every((user) => user.username !== username),
     getLoggedUser: (state) => state.loggedUser,
-    isGiftnameAvailable: (state) => (name) =>
-      state.gifts.every((gift) => gift.name !== name),
+    isQuiznameAvailable: (state) => (name) =>
+      state.quizzes.every((quiz) => quiz.name !== name),
 
-    getGifts: (state) => state.gifts,
+    getQuizzes: (state) => state.quizzes,
   },
   mutations: {
     SET_LOGGED_USER(state, payload) {
@@ -44,19 +42,19 @@ export default new Vuex.Store({
       state.loggedUser = null;
       localStorage.removeItem("loggedUser");
     },
-    SET_NEW_GIFT(state, payload) {
-      state.gifts.push(payload);
-      localStorage.gifts = JSON.stringify(state.gifts);
+    SET_NEW_QUIZ(state, payload) {
+      state.quizzes.push(payload);
+      localStorage.quizzes = JSON.stringify(state.quizzes);
     },
-    SET_WANT_GIFT(state, payload) {
-      state.gifts.map((gift) => {
-        if (gift.name === payload) {
-          gift.quantity--;
-          gift.children.push(state.loggedUser.username);
-          state.loggedUser.gifts = 1;
+    SET_WANT_QUIZ(state, payload) {
+      state.quizzes.map((quiz) => {
+        if (quiz.name === payload) {
+          quiz.quantity--;
+          quiz.children.push(state.loggedUser.username);
+          state.loggedUser.quizzes = 1;
         }
       });
-      localStorage.gifts = JSON.stringify(state.gifts);
+      localStorage.quizzes = JSON.stringify(state.quizzes);
       localStorage.loggedUser = JSON.stringify(state.loggedUser);
     },
   },

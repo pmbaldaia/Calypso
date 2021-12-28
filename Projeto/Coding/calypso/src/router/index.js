@@ -2,14 +2,13 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import Gifts from "../views/Gifts.vue";
+import Quizzes from "../views/Quizzes.vue";
 
 import store from "../store/index.js";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "login",
     component: Login,
@@ -20,9 +19,9 @@ const routes = [
     component: Register,
   },
   {
-    path: "/gifts",
-    name: "gifts",
-    component: Gifts,
+    path: "/quizzes",
+    name: "quizzes",
+    component: Quizzes,
     meta: {
       requiresAuth: true,
     },
@@ -35,7 +34,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !store.getters.getLoggedUser) {
-    next({ name: "login" });
+    next({
+      name: "login"
+    });
   } else {
     next();
   }

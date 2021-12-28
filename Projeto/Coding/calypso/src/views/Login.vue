@@ -84,7 +84,7 @@ export default {
     login() {
       if (this.isUser(this.username, this.password)) {
         this.SET_LOGGED_USER(this.username);
-        this.$router.push({ name: "gifts" });
+        this.$router.push({ name: "quizzes" });
       } else {
         alert("Nenhum utilizador encontrado, tente novamente!");
       }
