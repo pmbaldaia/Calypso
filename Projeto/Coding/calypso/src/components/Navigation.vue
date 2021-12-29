@@ -2,7 +2,7 @@
   <header :class="{ 'scrolled-nav': scrolledNav }">
     <nav>
       <div class="branding">
-        <img src="@/assets/Logo.png" />
+        <img src="@/assets/logo.png" />
       </div>
       <ul v-show="!mobile" class="navigation">
         <li>
@@ -93,7 +93,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#header {
+header {
   background-color:rgb(0,0,0,0.8);
   z-index: 99;
   width: 100%;
