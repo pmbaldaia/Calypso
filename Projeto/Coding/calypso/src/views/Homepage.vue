@@ -6,16 +6,21 @@
       </div>
       <ul class="navigation">
         <li>
-          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+          <router-link class="link" :to="{ name: '' }">INÍCIO</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: '' }">About</router-link>
+          <router-link class="link" :to="{ name: '' }">QUIZZES</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: '' }">Portfolio</router-link>
+          <router-link class="link" :to="{ name: '' }">FILMES</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: '' }">Contact</router-link>
+          <router-link class="link" :to="{ name: '' }">SÉRIES</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ name: 'login' }"
+            >LOGIN<img class="icon-login" src="@/assets/icons/login.png"
+          /></router-link>
         </li>
       </ul>
     </nav>
@@ -28,7 +33,6 @@ export default {};
 
 <style>
 header {
-  background-color: rgb(0, 0, 0, 0.8);
   z-index: 99;
   width: 100%;
   position: fixed;
@@ -48,7 +52,7 @@ nav {
 ul,
 .link {
   font-weight: 500;
-  color: #fff;
+  color: #000;
   list-style: none;
   text-decoration: none;
 }
@@ -92,7 +96,10 @@ i {
   font-size: 24px;
   transition: 0.8s ease all;
 }
-
+.icon-login {
+  width: 15px;
+  height: 15px;
+}
 .icon-active {
   transform: rotate(180deg);
 }
