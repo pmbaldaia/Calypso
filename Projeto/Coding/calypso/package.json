@@ -9,12 +9,17 @@
     "start": "vue-cli-service serve --open"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.11.5",
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
     "jquery": "^3.6.0",
     "mdb-vue-ui-kit": "^1.0.0-alpha1",
     "mdbvue": "^6.7.3",
+    "mutationobserver-shim": "^0.3.7",
     "node-sass": "^7.0.1",
     "popper.js": "^1.16.1",
+    "portal-vue": "^2.1.7",
     "sass-loader": "^12.4.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
@@ -29,6 +34,9 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "vue-cli-plugin-bootstrap-vue": "~0.8.2",
     "vue-cli-plugin-mdb5": "~1.2.0",
     "vue-template-compiler": "^2.6.11"
   }

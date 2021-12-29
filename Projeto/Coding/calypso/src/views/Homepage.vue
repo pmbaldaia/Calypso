@@ -24,6 +24,43 @@
         </li>
       </ul>
     </nav>
+    <div>
+      <b-container id="carouselRow">
+        <b-row>
+          <b-col></b-col>
+          <b-col>
+            <b-carousel
+              id="carousel-1"
+              v-model="slide"
+              :interval="4000"
+              indicators
+              background="#ababab"
+              img-width="2048"
+              img-height="960"
+              style="text-shadow: 1px 1px 2px #333"
+              @sliding-start="onSlideStart"
+              @sliding-end="onSlideEnd"
+            >
+              <b-carousel-slide img-src="https://picsum.photos/1024/480">
+                <h1>slide1</h1>
+              </b-carousel-slide>
+
+              <b-carousel-slide img-src="https://picsum.photos/1024/480">
+                <h1>slide2</h1>
+              </b-carousel-slide>
+
+              <b-carousel-slide img-src="https://picsum.photos/1024/480">
+                <h1>slide3</h1>
+              </b-carousel-slide>
+
+              <b-carousel-slide img-src="https://picsum.photos/1024/480">
+                <h1>slide4</h1>
+              </b-carousel-slide>
+            </b-carousel>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
   </header>
 </template>
 
