@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <h1>CALYPSO</h1>
+    <!-- 
+    <Navigation /> -->
     <router-view />
   </div>
 </template>

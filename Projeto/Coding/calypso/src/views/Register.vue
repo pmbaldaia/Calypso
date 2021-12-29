@@ -12,10 +12,11 @@
             @submit.prevent="register"
           >
             <div class="text-center">
+              <h5>Página de Registo</h5>
               <img
                 src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png"
                 class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                width="130px"
+                width="100px"
               />
             </div>
 
@@ -63,9 +64,10 @@
             </div>
             <div class="text-center">
               <button
+                style="background-color: #0e1c36; color: #fff"
                 type="submit"
                 value="REGISTER"
-                class="btn btn-color px-5 mb-5 w-100"
+                class="btn px-5 mb-5 w-100"
               >
                 Registar
               </button>
