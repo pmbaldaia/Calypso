@@ -10,7 +10,7 @@
       />
       <ul class="navigation">
         <li>
-          <router-link class="link active" :to="{ name: 'home' }"
+          <router-link class="link active" :to="{ name: '' }"
             >INÍCIO</router-link
           >
         </li>
