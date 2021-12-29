@@ -5,24 +5,65 @@
 </template>
 
 <style>
-#app {
-  font-family: Rubik;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+header {
+  z-index: 99;
+  width: 100%;
+  position: fixed;
+  transition: 0.5s ease all;
+  color: #023047;
 }
 
-#nav {
-  padding: 30px;
+nav {
+  font-family: "Rubik";
+  color: #023047;
+  display: flex;
+  flex-direction: row;
+  padding: 12px 0;
+  transition: 0.5s ease all;
+  width: 90%;
+  margin: 0 auto;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+ul,
+.link {
+  font-weight: 500;
+  color: #023047;
+  list-style: none;
+  text-decoration: none;
+}
+li {
+  text-transform: uppercase;
+  padding: 16px;
+  margin-left: 16px;
+}
+.link {
+  font-size: 14px;
+  transition: 0.5s ease all;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+}
+li a:hover {
+  border-bottom: #ac3931 solid 1px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.branding {
+  display: flex;
+  align-items: center;
+}
+img {
+  width: 50px;
+  transition: 0.5s ease all;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.icon-login {
+  width: 15px;
+  height: 15px;
 }
 </style>
