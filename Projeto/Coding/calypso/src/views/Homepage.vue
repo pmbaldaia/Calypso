@@ -44,15 +44,25 @@
         background="gray"
         img-width="1024"
         img-height="480"
-        style="text-shadow: 1px 1px 2px #333 margin-top: 100px"
+        style="text-shadow: 1px 1px 2px #333"
         @sliding-start="onSlideStart"
         @sliding-end="onSlideEnd"
       >
-        <b-carousel-slide
-          caption="First slide"
-          text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-          img-src="https://seyboldjewelry.com/wp-content/uploads/2021/10/Featured_Image-1024x480.jpg"
-        ></b-carousel-slide>
+        <b-carousel-slide>
+          <template #img>
+            <img
+              class="d-block img-fluid w-100"
+              width="1024"
+              height="480"
+              src="@/assets/images/007slide.jpg"
+              alt="image slot"
+            />
+          </template>
+          <h1 style="font-family: Rubik; font-size: 22px">Quizz James Bond</h1>
+          <p style="font-family: Rubik light">
+            Teste os seus conhecimentos 007
+          </p></b-carousel-slide
+        >
 
         <b-carousel-slide>
           <template #img>
@@ -60,31 +70,30 @@
               class="d-block img-fluid w-100"
               width="1024"
               height="480"
-              src="https://www.indiewire.com/wp-content/uploads/2020/03/960x0.jpg.png"
+              src="@/assets/images/notimetodieslide.jpg"
               alt="image slot"
             />
           </template>
-          <h1>Hello world!</h1>
+          <h1 style="font-family: Rubik; font-size: 22px">Filme em Destaque</h1>
+          <p style="font-family: Rubik light">
+            'No time to die' ou 'Sem tempo para morrer'
+          </p>
         </b-carousel-slide>
-
-        <!-- Slides with image only -->
-        <b-carousel-slide
-          img-src="https://picsum.photos/1024/480/?image=58"
-        ></b-carousel-slide>
-
-        <!-- Slides with img slot -->
-        <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
         <b-carousel-slide>
           <template #img>
             <img
               class="d-block img-fluid w-100"
               width="1024"
               height="480"
-              src="https://picsum.photos/1024/480/?image=55"
+              src="@/assets/images/lacasadepapelslide1.webp"
               alt="image slot"
             />
           </template>
-        </b-carousel-slide>
+          <h1 style="font-family: Rubik; font-size: 22px">Série em Destaque</h1>
+          <p style="font-family: Rubik light">
+            'La Casa de Papel' ou 'Casa de Papel'
+          </p></b-carousel-slide
+        >
       </b-carousel>
     </body>
   </div>
