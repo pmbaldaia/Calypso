@@ -58,9 +58,19 @@ img {
   width: 15px;
   height: 15px;
 }
+.carousel {
+  width: 90%;
+  height: 90%;
+  left: 5%;
+}
+
+.carousel-indicators li {
+  background-color: #ffb703;
+}
 
 .carousel img {
   width: 1024px;
   height: 680px;
+  opacity: 70%;
 }
 </style>
