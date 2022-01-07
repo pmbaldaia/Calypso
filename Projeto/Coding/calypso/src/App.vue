@@ -5,14 +5,6 @@
 </template>
 
 <style>
-header {
-  z-index: 99;
-  width: 100%;
-  position: fixed;
-  transition: 0.5s ease all;
-  color: #023047;
-}
-
 nav {
   font-family: "Rubik";
   color: #023047;

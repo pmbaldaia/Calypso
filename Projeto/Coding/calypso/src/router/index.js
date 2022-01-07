@@ -4,6 +4,8 @@ import Homepage from "../views/Homepage.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Quizzes from "../views/Quizzes.vue";
+import FilmCatalogo from "../views/filmesCatalogo.vue";
+import FilmDetalhes from "../views/filmeDetalhes.vue"
 
 import store from "../store/index.js";
 
@@ -31,6 +33,16 @@ const routes = [{
       requiresAuth: true,
     },
   },
+  {
+    path: "/filmsCatalogo",
+    name:"filmsCatalogo",
+    component: FilmCatalogo,
+  },
+  {
+    path: "/filmsDetalhes",
+    name:"filmsDetalhes",
+    component: FilmDetalhes,
+  }
 ];
 
 const router = new VueRouter({
