@@ -23,7 +23,8 @@ ul,
   list-style: none;
   text-decoration: none;
 }
-li {
+
+ul li {
   text-transform: uppercase;
   padding: 16px;
   margin-left: 16px;
@@ -34,10 +35,9 @@ li {
   padding-bottom: 4px;
   border-bottom: 1px solid transparent;
 }
-li a:hover {
+.active {
   border-bottom: #ac3931 solid 1px;
 }
-
 .branding {
   display: flex;
   align-items: center;

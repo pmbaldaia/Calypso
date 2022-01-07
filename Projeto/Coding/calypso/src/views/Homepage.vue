@@ -48,19 +48,12 @@
         @sliding-start="onSlideStart"
         @sliding-end="onSlideEnd"
       >
-        <!-- Text slides with image -->
-        <b-carousel-slide>
-          <template #img>
-            <img
-              class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
-              src="https://seyboldjewelry.com/wp-content/uploads/2021/10/Featured_Image-1024x480.jpg"
-              alt="image slot"
-            /> </template
+        <b-carousel-slide
+          caption="First slide"
+          text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+          img-src="https://seyboldjewelry.com/wp-content/uploads/2021/10/Featured_Image-1024x480.jpg"
         ></b-carousel-slide>
 
-        <!-- Slides with custom text -->
         <b-carousel-slide>
           <template #img>
             <img
