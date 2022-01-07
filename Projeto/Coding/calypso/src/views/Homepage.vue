@@ -42,8 +42,6 @@
         controls
         indicators
         background="gray"
-        img-width="1024"
-        img-height="480"
         style="text-shadow: 1px 1px 2px #333"
         @sliding-start="onSlideStart"
         @sliding-end="onSlideEnd"
@@ -52,8 +50,6 @@
           <template #img>
             <img
               class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
               src="@/assets/images/007slide.jpg"
               alt="image slot"
             />
@@ -68,8 +64,6 @@
           <template #img>
             <img
               class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
               src="@/assets/images/notimetodieslide.jpg"
               alt="image slot"
             />
@@ -83,8 +77,6 @@
           <template #img>
             <img
               class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
               src="@/assets/images/lacasadepapelslide1.webp"
               alt="image slot"
             />

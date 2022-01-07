@@ -58,4 +58,9 @@ img {
   width: 15px;
   height: 15px;
 }
+
+.carousel img {
+  width: 1024px;
+  height: 680px;
+}
 </style>
