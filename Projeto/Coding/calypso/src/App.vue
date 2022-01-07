@@ -39,6 +39,7 @@ ul li {
   border-bottom: #ac3931 solid 1px;
 }
 .branding {
+  font-family: Rubik;
   display: flex;
   align-items: center;
 }
@@ -59,9 +60,9 @@ img {
   height: 15px;
 }
 .carousel {
-  width: 90%;
-  height: 90%;
-  left: 5%;
+  width: 100%;
+  height: 50%; /*
+  margin-left: 5%; */
 }
 
 .carousel-indicators li {
@@ -69,8 +70,8 @@ img {
 }
 
 .carousel img {
-  width: 1024px;
-  height: 680px;
+  width: 10px;
+  height: 620px;
   opacity: 70%;
 }
 </style>

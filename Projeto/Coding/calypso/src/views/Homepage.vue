@@ -39,6 +39,7 @@
         id="carousel-1"
         v-model="slide"
         :interval="4000"
+        fluid="true"
         controls
         indicators
         background="gray"
@@ -87,6 +88,44 @@
           </p></b-carousel-slide
         >
       </b-carousel>
+      <br />
+      <div class="homepage">
+        <br />
+        <h2>QUIZZES</h2>
+        <p>Teste o seu conhecimento</p>
+      </div>
+      <div class="homepage">
+        <br />
+        <h2>FILMES</h2>
+        <p>Veja os novos filmes</p>
+      </div>
+      <div class="homepage">
+        <br />
+        <h2>SÉRIES</h2>
+        <p>Veja as novas séries</p>
+      </div>
     </body>
   </div>
 </template>
+<style>
+div .homepage {
+  height: 100px;
+  width: 22%;
+  float: left;
+  font-family: Rubik;
+  color: white;
+  padding-bottom: 8%;
+  background: linear-gradient(to left, #ffb703 10%, #ed6a5a 30%);
+  clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%);
+}
+
+div h2 {
+  font-family: Rubik;
+  margin-left: 8%;
+}
+
+div p {
+  font-family: Rubik light;
+  margin-left: 8%;
+}
+</style>
