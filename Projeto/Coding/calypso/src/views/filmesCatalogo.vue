@@ -36,25 +36,23 @@
     </header>
     <body>
       <div>
-        <b-container fluid class="p-4">
-          <b-row>
-            <b-col v-for="(film, index) in getFilmes" :key="index"
-              ><b-card
-                class="m-3"
-                :title="film.title"
-                :img-src="film.image"
-                img-alt="Image"
-                img-top
-                tag="film"
-                style="max-width: 20rem"
-              >
-                <b-link
-                  class="card-link stretched-link"
-                  @click="chooseFilm(film.title)"
-                ></b-link></b-card
-            ></b-col>
-          </b-row>
-        </b-container>
+        <b-row no-gutters m="6">
+          <b-col v-for="(film, index) in getFilmes" :key="index" m="4"
+            ><b-card
+              class="m-5"
+              :title="film.title"
+              :img-src="film.image"
+              img-alt="Image"
+              img-top
+              tag="film"
+              style="max-width: 20rem"
+            >
+              <b-link
+                class="card-link stretched-link"
+                @click="chooseFilm(film.title)"
+              ></b-link></b-card
+          ></b-col>
+        </b-row>
       </div>
     </body>
   </div>
@@ -62,7 +60,6 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-
 export default {
   name: "filmsCatalogo",
   computed: {

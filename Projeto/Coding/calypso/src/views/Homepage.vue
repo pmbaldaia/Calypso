@@ -94,24 +94,103 @@
         <h2>QUIZZES</h2>
         <p>Teste o seu conhecimento</p>
       </div>
+      <br /><br /><br />
       <div class="homepage">
         <br />
         <h2>FILMES</h2>
         <p>Veja os novos filmes</p>
       </div>
+      <br /><br /><br />
       <div class="homepage">
         <br />
         <h2>SÉRIES</h2>
         <p>Veja as novas séries</p>
       </div>
+      <br /><br /><br />
+      <div>
+        <!-- Footer -->
+        <footer class="page-footer font-small blue pt-4">
+          <!-- Footer Links -->
+          <div class="container-fluid text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+              <!-- Grid column -->
+              <div class="col-md-6 mt-md-0 mt-3">
+                <!-- Content -->
+                <h5 class="text-uppercase">Footer Content</h5>
+                <p>
+                  Here you can use rows and columns to organize your footer
+                  content.
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <hr class="clearfix w-100 d-md-none pb-3" />
+
+              <!-- Grid column -->
+              <div class="col-md-3 mb-md-0 mb-3">
+                <!-- Links -->
+                <h5 class="text-uppercase">Links</h5>
+
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#!">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 4</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 mb-md-0 mb-3">
+                <!-- Links -->
+                <h5 class="text-uppercase">Links</h5>
+
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#!">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 4</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+          <!-- Footer Links -->
+
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">
+            © 2022 Copyright CALYPSO
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </div>
     </body>
   </div>
 </template>
+
 <style>
 div .homepage {
   height: 100px;
   width: 22%;
-  float: left;
   font-family: Rubik;
   color: white;
   padding-bottom: 8%;
@@ -119,13 +198,8 @@ div .homepage {
   clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%);
 }
 
-div h2 {
-  font-family: Rubik;
-  margin-left: 8%;
-}
-
-div p {
-  font-family: Rubik light;
-  margin-left: 8%;
+div h2,
+p {
+  margin-left: 22px;
 }
 </style>
