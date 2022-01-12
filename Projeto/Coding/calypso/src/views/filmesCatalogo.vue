@@ -36,13 +36,12 @@
     </header>
     <body>
       <div>
-        <b-row no-gutters m="6">
-          <b-col v-for="(film, index) in getFilmes" :key="index" m="4"
+        <b-row no-gutters>
+          <b-col sm="3" v-for="(film, index) in getFilmes" :key="index"
             ><b-card
-              class="m-5"
+              class="m-3"
               :title="film.title"
               :img-src="film.image"
-              img-alt="Image"
               img-top
               tag="film"
               style="max-width: 20rem"

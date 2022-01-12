@@ -113,7 +113,7 @@
                 <div class="col-md-4 col-sm-6">
                   <div class="footer-pad">
                     <ul>
-                      <li><a href="#">sobre nós</a></li>
+                      <li><a href="#">Sobre nós</a></li>
                       <li><a href="#">Localização</a></li>
                       <li><a href="#">Política de Privacidade</a></li>
                       <li><a href="#">Termos de Utilização</a></li>
