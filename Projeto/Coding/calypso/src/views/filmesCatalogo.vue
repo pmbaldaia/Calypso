@@ -36,6 +36,36 @@
     </header>
     <body>
       <div>
+        <b-row>
+          <b-col sm="3">
+            <b-dropdown id="dropdown-1" text="Ano" class="m-md-2">
+              <b-dropdown-item>2022</b-dropdown-item>
+              <b-dropdown-item>2021</b-dropdown-item>
+              <b-dropdown-item>2020</b-dropdown-item>
+              <b-dropdown-item>2019</b-dropdown-item>
+              <b-dropdown-item disabled>...</b-dropdown-item>
+            </b-dropdown>
+            <b-dropdown id="dropdown-1" text="Categoria" class="m-md-2">
+              <b-dropdown-item>Ação</b-dropdown-item>
+              <b-dropdown-item>Comédia</b-dropdown-item>
+              <b-dropdown-item>Drama</b-dropdown-item>
+              <b-dropdown-item>Mistério</b-dropdown-item>
+              <b-dropdown-item>Romance</b-dropdown-item>
+              <b-dropdown-item>Terror</b-dropdown-item>
+              <b-dropdown-item disabled>...</b-dropdown-item>
+            </b-dropdown>
+            <b-nav-form>
+              <b-form-input
+                size="sm"
+                class="mr-sm-2"
+                placeholder="Search"
+              ></b-form-input>
+              <b-button size="sm" class="my-2 my-sm-0" type="submit"
+                >Search</b-button
+              >
+            </b-nav-form>
+          </b-col>
+        </b-row>
         <b-row no-gutters>
           <b-col sm="3" v-for="(film, index) in getFilmes" :key="index"
             ><b-card
@@ -74,4 +104,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+.cornav {
+  font-family: Rubik;
+  color: red;
+}
+</style>
