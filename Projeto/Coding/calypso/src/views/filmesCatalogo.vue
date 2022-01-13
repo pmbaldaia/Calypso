@@ -69,7 +69,7 @@
                   <b-dropdown-item disabled>...</b-dropdown-item>
                 </b-dropdown>
               </div>
-              <form class="form-inline" style="padding-right: 9px">
+              <form class="form-inline" style="padding-right: 50px">
                 <input
                   class="form-control btn-outline mr-sm-2"
                   type="search"

@@ -218,6 +218,7 @@ export default {
   height: 100%;
   color: #023047;
   font-family: Rubik;
+  padding-left: 35px;
 }
 
 .btn-outline {

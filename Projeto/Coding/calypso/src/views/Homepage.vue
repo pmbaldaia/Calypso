@@ -98,23 +98,26 @@
       </div>
       <div>
         <b-row no-gutters class="cardspadding">
-          <b-col sm="4" v-for="(film, index) in getFilmes" :key="index"
+          <b-col sm="4" v-for="(filme, index) in getFilmeshomepage" :key="index"
             ><b-card
               class="m-3"
-              :title="film.title"
-              :img-src="film.image"
+              :title="filme.title"
+              :img-src="filme.image"
               img-top
               tag="film"
               style="max-width: 25rem"
             >
-              <b-link
-                class="card-link stretched-link"
-                @click="chooseFilm(film.title)"
-              ></b-link></b-card
+            </b-card
           ></b-col>
         </b-row>
+        <router-link
+          class="float-right"
+          :to="{ name: 'filmesCatalogo' }"
+          style="padding-right: 80px; padding-top: 110px; color: #1d2021"
+          >Ver todos</router-link
+        >
       </div>
-      <br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br />
       <div class="homepage">
         <br />
         <h2>FILMES</h2>
@@ -222,18 +225,11 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters } from "vuex";
 export default {
-  name: "filmesCatalogo",
+  name: "filmeshomepage",
   computed: {
-    ...mapGetters(["getFilmes"]),
-  },
-  methods: {
-    ...mapMutations(["SET_ACTUAL_FILME"]),
-    chooseFilm(title) {
-      this.SET_ACTUAL_FILME(title);
-      this.$router.push("filmesDetalhes");
-    },
+    ...mapGetters(["getFilmeshomepage"]),
   },
 };
 </script>
