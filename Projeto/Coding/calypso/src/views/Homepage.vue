@@ -16,15 +16,19 @@
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">QUIZZES</router-link>
+            <router-link class="link" :to="{ name: 'quizzesCatalogo' }"
+              >QUIZZES</router-link
+            >
           </li>
           <li>
-            <router-link class="link" :to="{ name: 'filmsCatalogo' }"
+            <router-link class="link" :to="{ name: 'filmesCatalogo' }"
               >FILMES</router-link
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">SÉRIES</router-link>
+            <router-link class="link" :to="{ name: 'seriesCatalogo' }"
+              >SÉRIES</router-link
+            >
           </li>
           <li>
             <router-link class="link" :to="{ name: 'login' }"
@@ -86,13 +90,31 @@
           </p></b-carousel-slide
         >
       </b-carousel>
-      <br />
+      <br /><br />
       <div class="homepage">
         <br />
         <h2>QUIZZES</h2>
         <p>Teste o seu conhecimento</p>
       </div>
-      <br /><br /><br />
+      <div>
+        <b-row no-gutters class="cardspadding">
+          <b-col sm="4" v-for="(film, index) in getFilmes" :key="index"
+            ><b-card
+              class="m-3"
+              :title="film.title"
+              :img-src="film.image"
+              img-top
+              tag="film"
+              style="max-width: 25rem"
+            >
+              <b-link
+                class="card-link stretched-link"
+                @click="chooseFilm(film.title)"
+              ></b-link></b-card
+          ></b-col>
+        </b-row>
+      </div>
+      <br /><br /><br /><br /><br /><br />
       <div class="homepage">
         <br />
         <h2>FILMES</h2>
@@ -198,6 +220,23 @@
     </body>
   </div>
 </template>
+
+<script>
+import { mapGetters, mapMutations } from "vuex";
+export default {
+  name: "filmesCatalogo",
+  computed: {
+    ...mapGetters(["getFilmes"]),
+  },
+  methods: {
+    ...mapMutations(["SET_ACTUAL_FILME"]),
+    chooseFilm(title) {
+      this.SET_ACTUAL_FILME(title);
+      this.$router.push("filmesDetalhes");
+    },
+  },
+};
+</script>
 
 <style>
 div .homepage {

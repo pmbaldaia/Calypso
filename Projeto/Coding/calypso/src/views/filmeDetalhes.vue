@@ -16,15 +16,19 @@
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">QUIZZES</router-link>
+            <router-link class="link" :to="{ name: 'quizzesCatalogo' }"
+              >QUIZZES</router-link
+            >
           </li>
           <li>
-            <router-link class="link active" :to="{ name: 'filmsCatalogo' }"
+            <router-link class="link active" :to="{ name: 'filmesCatalogo' }"
               >FILMES</router-link
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">SÉRIES</router-link>
+            <router-link class="link" :to="{ name: 'seriesCatalogo' }"
+              >SÉRIES</router-link
+            >
           </li>
           <li>
             <router-link class="link" :to="{ name: 'login' }"
@@ -35,41 +39,43 @@
       </nav>
     </header>
     <body>
-      <b-row no-gutters>
-        <b-col>
-          <div>
-            <h1>
-              {{ actualFilm[0].title }}
-            </h1>
+      <b-container>
+        <b-row>
+          <b-col class="mainInfo" style="margin-top: 120px">
+            <div class="mainInfoBack">
+              <h1 style="margin-top: 30px; margin-left: 30px">
+                {{ actualFilme[0].title }}
+              </h1>
+              <p style="font-size: 25px; margin-top: 60px; margin-left: 30px">
+                {{ actualFilme[0].lancamento }}
+              </p>
+            </div>
+          </b-col>
+          <b-col style="margin-top: 120px"
+            ><b-img
+              :src="actualFilme[0].image"
+              style="width: 720px; margin-left: 400px; position: absolute"
+            ></b-img>
+          </b-col>
+        </b-row>
+        <b-row class="secondInfo">
+          <b-col class="secondInfoFront">
+            <h1 style="margin-top: 150px">Sinopse</h1>
             <p>
-              {{ actualFilm[0].lancamento }}
+              {{ actualFilme[0].sinopse }}
             </p>
-          </div>
-        </b-col>
-        <b-col style="margin-top: 120px"
-          ><b-img
-            :src="actualFilm[0].image"
-            style="width: 720px; margin-left: 400px; position: absolute"
-          ></b-img>
-        </b-col>
-      </b-row>
-      <b-row class="secondInfo">
-        <b-col class="secondInfoFront">
-          <h1 style="margin-top: 150px">Sinopse</h1>
-          <p>
-            {{ actualFilm[0].sinopse }}
-          </p>
-          <br />
-          <h1>Diretor</h1>
-          <p>{{ actualFilm[0].director }}</p>
-          <br />
-          <h1>Escritor</h1>
-          <p>{{ actualFilm[0].writers }}</p>
-          <br />
-          <h1>Atores</h1>
-          <p>{{ actualFilm[0].stars }}</p>
-        </b-col>
-      </b-row>
+            <br />
+            <h1>Diretor</h1>
+            <p>{{ actualFilme[0].director }}</p>
+            <br />
+            <h1>Escritor</h1>
+            <p>{{ actualFilme[0].writers }}</p>
+            <br />
+            <h1>Atores</h1>
+            <p>{{ actualFilme[0].stars }}</p>
+          </b-col>
+        </b-row>
+      </b-container>
     </body>
   </div>
 </template>
@@ -77,26 +83,26 @@
 <script>
 import { mapGetters, mapMutations } from "vuex";
 export default {
-  name: "filmsDetalhes",
+  name: "filmeDetalhes",
   data() {
     return {
-      actualFilm: [],
+      actualFilme: [],
     };
   },
   computed: {
-    ...mapGetters(["getFilmes", "setVisitingFilm"]),
+    ...mapGetters(["getFilmes", "setVisitingFilme"]),
   },
   methods: {
-    ...mapMutations(["SET_ACTUAL_FILM"]),
-    checkWhichFilm() {
-      this.actualFilm.push(
-        this.getFilmes.find((film) => film.title == this.setVisitingFilm)
+    ...mapMutations(["SET_ACTUAL_FILME"]),
+    checkWhichFilme() {
+      this.actualFilme.push(
+        this.getFilmes.find((filme) => filme.title == this.setVisitingFilme)
       );
-      console.log(this.setVisitingFilm);
+      console.log(this.setVisitingFilme);
     },
   },
   created() {
-    this.checkWhichFilm();
+    this.checkWhichFilme();
   },
 };
 </script>

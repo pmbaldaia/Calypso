@@ -4,8 +4,10 @@ import Homepage from "../views/Homepage.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Quizzes from "../views/Quizzes.vue";
-import FilmCatalogo from "../views/filmesCatalogo.vue";
-import FilmDetalhes from "../views/filmeDetalhes.vue"
+import FilmeCatalogo from "../views/filmesCatalogo.vue";
+import FilmeDetalhes from "../views/filmeDetalhes.vue";
+import SeriesCatalogo from "../views/seriesCatalogo.vue";
+import QuizzesCatalogo from "../views/quizzesCatalogo.vue";
 
 import store from "../store/index.js";
 
@@ -34,15 +36,25 @@ const routes = [{
     },
   },
   {
-    path: "/filmsCatalogo",
-    name:"filmsCatalogo",
-    component: FilmCatalogo,
+    path: "/filmesCatalogo",
+    name: "filmesCatalogo",
+    component: FilmeCatalogo,
   },
   {
-    path: "/filmsDetalhes",
-    name:"filmsDetalhes",
-    component: FilmDetalhes,
-  }
+    path: "/filmeDetalhes",
+    name: "filmeDetalhes",
+    component: FilmeDetalhes,
+  },
+  {
+    path: "/seriesCatalogo",
+    name: "seriesCatalogo",
+    component: SeriesCatalogo,
+  },
+  {
+    path: "/quizzesCatalogo",
+    name: "quizzesCatalogo",
+    component: QuizzesCatalogo,
+  },
 ];
 
 const router = new VueRouter({

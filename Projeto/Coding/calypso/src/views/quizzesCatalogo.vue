@@ -16,12 +16,12 @@
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: 'quizzesCatalogo' }"
+            <router-link class="link active" :to="{ name: 'quizzesCatalogo' }"
               >QUIZZES</router-link
             >
           </li>
           <li>
-            <router-link class="link active" :to="{ name: '' }"
+            <router-link class="link" :to="{ name: 'filmesCatalogo' }"
               >FILMES</router-link
             >
           </li>
@@ -46,13 +46,12 @@
               <div>
                 <b-dropdown
                   variant="light"
-                  text="Ano"
+                  text="Tipo"
                   class="m-md-2 btn-outline"
                 >
-                  <b-dropdown-item>2022</b-dropdown-item>
-                  <b-dropdown-item>2021</b-dropdown-item>
-                  <b-dropdown-item>2020</b-dropdown-item>
-                  <b-dropdown-item>2019</b-dropdown-item>
+                  <b-dropdown-item>Por Vídeo</b-dropdown-item>
+                  <b-dropdown-item>Por Audio</b-dropdown-item>
+                  <b-dropdown-item>Por Imagem</b-dropdown-item>
                   <b-dropdown-item disabled>...</b-dropdown-item>
                 </b-dropdown>
                 <b-dropdown
@@ -69,7 +68,7 @@
                   <b-dropdown-item disabled>...</b-dropdown-item>
                 </b-dropdown>
               </div>
-              <form class="form-inline" style="padding-right: 9px">
+              <form class="form-inline" style="padding-right: 50px">
                 <input
                   class="form-control btn-outline mr-sm-2"
                   type="search"
@@ -83,20 +82,20 @@
             </nav>
           </b-col>
         </b-row>
-        <h3>FILMES</h3>
+        <h3>QUIZZES</h3>
         <b-row no-gutters class="cardspadding">
-          <b-col sm="4" v-for="(filme, index) in getFilmes" :key="index"
+          <b-col sm="4" v-for="(game, index) in getGames" :key="index"
             ><b-card
               class="m-3"
-              :title="filme.title"
-              :img-src="filme.image"
+              :title="game.title"
+              :img-src="game.image"
               img-top
-              tag="film"
+              tag="game"
               style="max-width: 25rem"
             >
               <b-link
                 class="card-link stretched-link"
-                @click="chooseFilme(filme.title)"
+                @click="chooseGame(game.title)"
               ></b-link></b-card
           ></b-col>
         </b-row>
@@ -198,15 +197,15 @@
 <script>
 import { mapGetters, mapMutations } from "vuex";
 export default {
-  name: "filmesCatalogo",
+  name: "quizzesCatalogo",
   computed: {
-    ...mapGetters(["getFilmes"]),
+    ...mapGetters(["getGames"]),
   },
   methods: {
-    ...mapMutations(["SET_ACTUAL_FILME"]),
-    chooseFilme(title) {
-      this.SET_ACTUAL_FILME(title);
-      this.$router.push("filmeDetalhes");
+    ...mapMutations(["SET_ACTUAL_GAME"]),
+    chooseGame(title) {
+      this.SET_ACTUAL_GAME(title);
+      this.$router.push("gameDetalhes");
     },
   },
 };
@@ -218,7 +217,6 @@ export default {
   height: 100%;
   color: #023047;
   font-family: Rubik;
-  padding-left: 35px;
 }
 
 .btn-outline {

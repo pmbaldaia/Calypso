@@ -21,12 +21,12 @@
             >
           </li>
           <li>
-            <router-link class="link active" :to="{ name: '' }"
+            <router-link class="link" :to="{ name: 'filmesCatalogo' }"
               >FILMES</router-link
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: 'seriesCatalogo' }"
+            <router-link class="link active" :to="{ name: '' }"
               >SÉRIES</router-link
             >
           </li>
@@ -69,7 +69,7 @@
                   <b-dropdown-item disabled>...</b-dropdown-item>
                 </b-dropdown>
               </div>
-              <form class="form-inline" style="padding-right: 9px">
+              <form class="form-inline" style="padding-right: 50px">
                 <input
                   class="form-control btn-outline mr-sm-2"
                   type="search"
@@ -83,20 +83,20 @@
             </nav>
           </b-col>
         </b-row>
-        <h3>FILMES</h3>
+        <h3>SÉRIES</h3>
         <b-row no-gutters class="cardspadding">
-          <b-col sm="4" v-for="(filme, index) in getFilmes" :key="index"
+          <b-col sm="4" v-for="(serie, index) in getSeries" :key="index"
             ><b-card
               class="m-3"
-              :title="filme.title"
-              :img-src="filme.image"
+              :title="serie.title"
+              :img-src="serie.image"
               img-top
-              tag="film"
+              tag="serie"
               style="max-width: 25rem"
             >
               <b-link
                 class="card-link stretched-link"
-                @click="chooseFilme(filme.title)"
+                @click="chooseSerie(serie.title)"
               ></b-link></b-card
           ></b-col>
         </b-row>
@@ -198,15 +198,15 @@
 <script>
 import { mapGetters, mapMutations } from "vuex";
 export default {
-  name: "filmesCatalogo",
+  name: "seriesCatalogo",
   computed: {
-    ...mapGetters(["getFilmes"]),
+    ...mapGetters(["getSeries"]),
   },
   methods: {
-    ...mapMutations(["SET_ACTUAL_FILME"]),
-    chooseFilme(title) {
-      this.SET_ACTUAL_FILME(title);
-      this.$router.push("filmeDetalhes");
+    ...mapMutations(["SET_ACTUAL_SERIE"]),
+    chooseSerie(title) {
+      this.SET_ACTUAL_SERIE(title);
+      this.$router.push("serieDetalhes");
     },
   },
 };
@@ -218,7 +218,6 @@ export default {
   height: 100%;
   color: #023047;
   font-family: Rubik;
-  padding-left: 35px;
 }
 
 .btn-outline {

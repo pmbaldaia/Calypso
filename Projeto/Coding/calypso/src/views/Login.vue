@@ -16,13 +16,19 @@
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">QUIZZES</router-link>
+            <router-link class="link" :to="{ name: 'quizzesCatalogo' }"
+              >QUIZZES</router-link
+            >
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">FILMES</router-link>
+            <router-link class="link" :to="{ name: 'filmesCatalogo' }"
+              >FILMES</router-link
+            >
           </li>
           <li>
-            <router-link class="link" :to="{ name: '' }">SÉRIES</router-link>
+            <router-link class="link" :to="{ name: 'seriesCatalogo' }"
+              >SÉRIES</router-link
+            >
           </li>
           <li>
             <router-link class="link" :to="{ name: 'login' }"
