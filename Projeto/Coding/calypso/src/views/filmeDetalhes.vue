@@ -35,43 +35,41 @@
       </nav>
     </header>
     <body>
-      <b-container>
-        <b-row>
-          <b-col class="mainInfo" style="margin-top: 120px">
-            <div class="mainInfoBack">
-              <h1 style="margin-top: 30px; margin-left: 30px">
-                {{ actualFilm[0].title }}
-              </h1>
-              <p style="font-size: 25px; margin-top: 60px; margin-left: 30px">
-                {{ actualFilm[0].lancamento }}
-              </p>
-            </div>
-          </b-col>
-          <b-col style="margin-top: 120px"
-            ><b-img
-              :src="actualFilm[0].image"
-              style="width: 720px; margin-left: 400px; position: absolute"
-            ></b-img>
-          </b-col>
-        </b-row>
-        <b-row class="secondInfo">
-          <b-col class="secondInfoFront">
-            <h1 style="margin-top: 150px">Sinopse</h1>
+      <b-row no-gutters>
+        <b-col>
+          <div>
+            <h1>
+              {{ actualFilm[0].title }}
+            </h1>
             <p>
-              {{ actualFilm[0].sinopse }}
+              {{ actualFilm[0].lancamento }}
             </p>
-            <br />
-            <h1>Diretor</h1>
-            <p>{{ actualFilm[0].director }}</p>
-            <br />
-            <h1>Escritor</h1>
-            <p>{{ actualFilm[0].writers }}</p>
-            <br />
-            <h1>Atores</h1>
-            <p>{{ actualFilm[0].stars }}</p>
-          </b-col>
-        </b-row>
-      </b-container>
+          </div>
+        </b-col>
+        <b-col style="margin-top: 120px"
+          ><b-img
+            :src="actualFilm[0].image"
+            style="width: 720px; margin-left: 400px; position: absolute"
+          ></b-img>
+        </b-col>
+      </b-row>
+      <b-row class="secondInfo">
+        <b-col class="secondInfoFront">
+          <h1 style="margin-top: 150px">Sinopse</h1>
+          <p>
+            {{ actualFilm[0].sinopse }}
+          </p>
+          <br />
+          <h1>Diretor</h1>
+          <p>{{ actualFilm[0].director }}</p>
+          <br />
+          <h1>Escritor</h1>
+          <p>{{ actualFilm[0].writers }}</p>
+          <br />
+          <h1>Atores</h1>
+          <p>{{ actualFilm[0].stars }}</p>
+        </b-col>
+      </b-row>
     </body>
   </div>
 </template>

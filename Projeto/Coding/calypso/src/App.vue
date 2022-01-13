@@ -74,4 +74,38 @@ img {
   height: 620px;
   opacity: 70%;
 }
+
+/*FOOTER*/
+li {
+  color: white;
+  font-family: Rubik;
+}
+footer {
+  font-family: Rubik;
+  background: linear-gradient(-8deg, #ffb703 40%, #ed6a5a 40%);
+  color: white;
+}
+
+footer a {
+  font-family: Rubik;
+  color: #fff;
+  font-size: 12px;
+  transition-duration: 0.2s;
+}
+
+.copy {
+  font-size: 12px;
+  padding: 10px;
+  color: #023047;
+}
+
+.footer-middle {
+  padding-top: 2em;
+  color: white;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
 </style>
