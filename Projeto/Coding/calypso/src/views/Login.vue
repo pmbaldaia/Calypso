@@ -49,7 +49,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
         crossorigin="anonymous"
       />
-      <div class="row">
+      <div class="row" style="background: red">
         <div class="col-md-6 offset-md-3">
           <div class="card my-5">
             <form
@@ -148,10 +148,6 @@ export default {
 .profile-image-pic {
   height: 200px;
   width: 200px;
-  object-fit: cover;
-}
-.card {
-  top: 100px;
 }
 .cardbody-color {
   background-color: #ebf2fa;

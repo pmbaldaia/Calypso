@@ -83,6 +83,7 @@
             </nav>
           </b-col>
         </b-row>
+        <br />
         <h3>FILMES</h3>
         <b-row no-gutters class="cardspadding">
           <b-col sm="4" v-for="(filme, index) in getFilmes" :key="index"
@@ -92,7 +93,7 @@
               :img-src="filme.image"
               img-top
               tag="film"
-              style="max-width: 25rem"
+              style="max-width: 25rem; color: #1d2021"
             >
               <b-link
                 class="card-link stretched-link"
@@ -101,7 +102,7 @@
           ></b-col>
         </b-row>
 
-        <b-row style="padding-top: 150px">
+        <b-row style="padding-top: 50px">
           <b-col>
             <footer>
               <div class="footer-middle">

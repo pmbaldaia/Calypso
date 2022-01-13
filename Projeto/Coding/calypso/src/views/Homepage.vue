@@ -105,6 +105,33 @@
               :img-src="filme.image"
               img-top
               tag="film"
+              style="max-width: 25rem; color: #1d2021"
+            >
+            </b-card
+          ></b-col>
+        </b-row>
+        <router-link
+          class="float-right"
+          :to="{ name: 'filmesCatalogo' }"
+          style="padding-right: 80px; padding-top: 30px; color: #1d2021"
+          >Ver todos</router-link
+        >
+      </div>
+      <br /><br /><br />
+      <div class="homepage">
+        <br />
+        <h2>FILMES</h2>
+        <p>Veja os novos filmes</p>
+      </div>
+      <div>
+        <b-row no-gutters class="cardspadding">
+          <b-col sm="4" v-for="(filme, index) in getFilmeshomepage" :key="index"
+            ><b-card
+              class="m-3"
+              :title="filme.title"
+              :img-src="filme.image"
+              img-top
+              tag="film"
               style="max-width: 25rem"
             >
             </b-card
@@ -113,21 +140,36 @@
         <router-link
           class="float-right"
           :to="{ name: 'filmesCatalogo' }"
-          style="padding-right: 80px; padding-top: 110px; color: #1d2021"
+          style="padding-right: 80px; padding-top: 30px; color: #1d2021"
           >Ver todos</router-link
         >
-      </div>
-      <br /><br /><br /><br /><br /><br /><br /><br />
-      <div class="homepage">
-        <br />
-        <h2>FILMES</h2>
-        <p>Veja os novos filmes</p>
       </div>
       <br /><br /><br />
       <div class="homepage">
         <br />
         <h2>SÉRIES</h2>
         <p>Veja as novas séries</p>
+      </div>
+      <div>
+        <b-row no-gutters class="cardspadding">
+          <b-col sm="4" v-for="(filme, index) in getFilmeshomepage" :key="index"
+            ><b-card
+              class="m-3"
+              :title="filme.title"
+              :img-src="filme.image"
+              img-top
+              tag="film"
+              style="max-width: 25rem"
+            >
+            </b-card
+          ></b-col>
+        </b-row>
+        <router-link
+          class="float-right"
+          :to="{ name: 'filmesCatalogo' }"
+          style="padding-right: 80px; padding-top: 30px; color: #1d2021"
+          >Ver todos</router-link
+        >
       </div>
       <br /><br /><br />
       <div>
