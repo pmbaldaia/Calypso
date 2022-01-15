@@ -45,7 +45,7 @@
               @submit.prevent="register"
             >
               <div class="text-center">
-                <h5>Página de Registo</h5>
+                <h5>Criar Conta</h5>
                 <img
                   src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png"
                   class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"

@@ -16,10 +16,9 @@ export default new Vuex.Store({
       }, ],
     games: localStorage.games ?
       JSON.parse(localStorage.games) : [{
-          title: "The Wheel of Time",
-          image: require('@/assets/images/notimetodie.jpg'),
+          title: "007 Quizz",
+          image: require('@/assets/images/007first.png'),
           lancamento: "2021",
-          sinopse: "Em 007 - Sem Tempo Para Morrer, depois de sair do serviço ativo da MI6, James Bond (Daniel Craig) vive tranquilamente na Jamaica, mas como nem tudo dura pouco, a vida do espião 007 é agitada mais uma vez. Felix Leiter (Jeffrey Wright) é um velho amigo da CIA que procura o inglês para um pequeno favor de ajudá-lo em uma missão secreta. O que era pra ser apenas uma missão de resgate de um grupo de cientistas acaba sendo mais traiçoeira do que o esperado, levando o agente inglês 007 ao misterioso vilão, Safin (Rami Malek), que utiliza de novas armas de tecnologia avançada e extremamente perigosa.",
           director: "Cary Joji Fukunaga",
           writers: "Neal Purvis(screenplay by)Robert Wade(screenplay by)Cary Joji Fukunaga(screenplay by)",
           stars: "Daniel Craig - Ana de Armas - Rami Malek"
@@ -95,7 +94,7 @@ export default new Vuex.Store({
           lancamento: "2021",
           sinopse: "Em 007 - Sem Tempo Para Morrer, depois de sair do serviço ativo da MI6, James Bond (Daniel Craig) vive tranquilamente na Jamaica, mas como nem tudo dura pouco, a vida do espião 007 é agitada mais uma vez. Felix Leiter (Jeffrey Wright) é um velho amigo da CIA que procura o inglês para um pequeno favor de ajudá-lo em uma missão secreta. O que era pra ser apenas uma missão de resgate de um grupo de cientistas acaba sendo mais traiçoeira do que o esperado, levando o agente inglês 007 ao misterioso vilão, Safin (Rami Malek), que utiliza de novas armas de tecnologia avançada e extremamente perigosa.",
           director: "Cary Joji Fukunaga",
-          writers: "Neal Purvis(screenplay by)Robert Wade(screenplay by)Cary Joji Fukunaga(screenplay by)",
+          writers: "Neal Purvis - Robert Wade - Cary Joji Fukunaga",
           stars: "Daniel Craig - Ana de Armas - Rami Malek"
         },
         {

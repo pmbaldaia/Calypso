@@ -11,7 +11,7 @@
         />
         <ul class="navigation">
           <li>
-            <router-link class="link active" :to="{ name: 'homepage' }"
+            <router-link class="link" :to="{ name: 'homepage' }"
               >INÍCIO</router-link
             >
           </li>
@@ -31,7 +31,7 @@
             >
           </li>
           <li>
-            <router-link class="link" :to="{ name: 'login' }"
+            <router-link class="link active" :to="{ name: 'login' }"
               >LOGIN<img class="icon-login" src="@/assets/icons/login.png"
             /></router-link>
           </li>
@@ -49,7 +49,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
         crossorigin="anonymous"
       />
-      <div class="row" style="background: red">
+      <div class="row login">
         <div class="col-md-6 offset-md-3">
           <div class="card my-5">
             <form
@@ -57,7 +57,7 @@
               @submit.prevent="login"
             >
               <div class="text-center">
-                <h5>Página Início Sessão</h5>
+                <h5>Iniciar Sessão</h5>
                 <img
                   src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png"
                   class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
@@ -134,7 +134,7 @@ export default {
     login() {
       if (this.isUser(this.username, this.password)) {
         this.SET_LOGGED_USER(this.username);
-        this.$router.push({ name: "quizzes" });
+        this.$router.push({ name: "perfil" });
       } else {
         alert("Nenhum utilizador encontrado, tente novamente!");
       }

@@ -5,6 +5,18 @@
 </template>
 
 <style>
+template {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 nav {
   font-family: "Rubik";
   color: #023047;

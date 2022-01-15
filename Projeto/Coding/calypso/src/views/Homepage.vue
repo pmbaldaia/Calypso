@@ -112,8 +112,8 @@
         </b-row>
         <router-link
           class="float-right"
-          :to="{ name: 'filmesCatalogo' }"
-          style="padding-right: 80px; padding-top: 30px; color: #1d2021"
+          :to="{ name: 'quizzesCatalogo' }"
+          style="padding-right: 80px; padding-top: 20px; color: #1d2021"
           >Ver todos</router-link
         >
       </div>
@@ -140,7 +140,7 @@
         <router-link
           class="float-right"
           :to="{ name: 'filmesCatalogo' }"
-          style="padding-right: 80px; padding-top: 30px; color: #1d2021"
+          style="padding-right: 80px; padding-top: 20px; color: #1d2021"
           >Ver todos</router-link
         >
       </div>
@@ -166,8 +166,8 @@
         </b-row>
         <router-link
           class="float-right"
-          :to="{ name: 'filmesCatalogo' }"
-          style="padding-right: 80px; padding-top: 30px; color: #1d2021"
+          :to="{ name: 'seriesCatalogo' }"
+          style="padding-right: 80px; padding-top: 20px; color: #1d2021"
           >Ver todos</router-link
         >
       </div>
@@ -178,7 +178,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-4 col-sm-6">
-                  <div class="footer-pad">
+                  <div>
                     <ul>
                       <li><a href="#">Sobre nós</a></li>
                       <li><a href="#">Localização</a></li>

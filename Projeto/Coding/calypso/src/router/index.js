@@ -3,11 +3,12 @@ import VueRouter from "vue-router";
 import Homepage from "../views/Homepage.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import Quizzes from "../views/Quizzes.vue";
+import Perfil from "../views/Perfil.vue";
 import FilmeCatalogo from "../views/filmesCatalogo.vue";
 import FilmeDetalhes from "../views/filmeDetalhes.vue";
 import SeriesCatalogo from "../views/seriesCatalogo.vue";
 import QuizzesCatalogo from "../views/quizzesCatalogo.vue";
+import QuizDetalhes from "../views/quizDetalhes.vue";
 
 import store from "../store/index.js";
 
@@ -28,9 +29,9 @@ const routes = [{
     component: Register,
   },
   {
-    path: "/quizzes",
-    name: "quizzes",
-    component: Quizzes,
+    path: "/perfil",
+    name: "perfil",
+    component: Perfil,
     meta: {
       requiresAuth: true,
     },
@@ -54,6 +55,11 @@ const routes = [{
     path: "/quizzesCatalogo",
     name: "quizzesCatalogo",
     component: QuizzesCatalogo,
+  },
+  {
+    path: "/quizDetalhes",
+    name: "quizDetalhes",
+    component: QuizDetalhes,
   },
 ];
 
