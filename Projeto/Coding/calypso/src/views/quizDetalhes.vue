@@ -158,7 +158,9 @@
                 <b-modal id="modalaviso" hide-footer>
                   <template #modal-title>
                     AVISO
-                    <u style="color: #ed6a5a">{{ getLoggedUser.username }}</u>
+                    <u style="color: #ed6a5a"
+                      ><!-- {{ getLoggedUser.username }} --></u
+                    >
                   </template>
                   <div class="d-block text-center">
                     <b-alert show variant="danger" class="text-center"
