@@ -60,6 +60,8 @@
             class="text-center"
           >
             Acertou {{ score }} de {{ questions.length }} perguntas
+            <p></p>
+            <b-button href="#" v-on:click="homepage">Ver resultados</b-button>
           </b-card>
         </div>
         <div class="card-q" v-else>
@@ -158,9 +160,7 @@
                 <b-modal id="modalaviso" hide-footer>
                   <template #modal-title>
                     AVISO
-                    <u style="color: #ed6a5a"
-                      ><!-- {{ getLoggedUser.username }} --></u
-                    >
+                    <u style="color: #ed6a5a"></u>
                   </template>
                   <div class="d-block text-center">
                     <b-alert show variant="danger" class="text-center"
@@ -201,13 +201,11 @@
                   mauris, vel volutpat urna hendrerit id. Curabitur rutrum dolor
                   gravida turpis tristique efficitur.
                 </p>
-                <div class="be-comment-content">
-                  <span class="fa fa-star star-active mx-1"></span>
-                  <span class="fa fa-star star-active mx-1"></span>
-                  <span class="fa fa-star star-active mx-1"></span>
-                  <span class="fa fa-star star-active mx-1"></span>
-                  <span class="fa fa-star star-inactive mx-1"></span>
-                </div>
+                <b-form-rating
+                  v-model="rating"
+                  variant="warning"
+                  class="mb-2 rating"
+                ></b-form-rating>
               </div>
             </div>
 
@@ -366,6 +364,7 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      rating: 3,
       currentQuestion: 0,
       showScore: false,
       score: 0,
@@ -374,63 +373,61 @@ export default {
       startQuiz: false,
       questions: [
         {
-          questionText: "Which one is used for two-way binding?",
-          answerOptions: [
-            { answerText: "v-on", isCorrect: false },
-            { answerText: "v-bind", isCorrect: false },
-            { answerText: "v-model", isCorrect: true },
-            { answerText: "v-if", isCorrect: false },
-          ],
-        },
-        {
-          questionText: "Who is the creator of vueJS ?",
-          answerOptions: [
-            { answerText: "Jeff Bezos", isCorrect: false },
-            { answerText: "Elon Musk", isCorrect: false },
-            { answerText: "Evan You", isCorrect: true },
-            { answerText: "Tony Stark", isCorrect: false },
-          ],
-        },
-        {
-          questionText: "Vue is used in the backend. - True or False?",
-          answerOptions: [
-            { answerText: "True", isCorrect: false },
-            { answerText: "False", isCorrect: true },
-          ],
-        },
-        {
-          questionText: "Which version of Vue is Launched on 2020?",
-          answerOptions: [
-            { answerText: "Vue 2", isCorrect: false },
-            { answerText: "Vue 1", isCorrect: false },
-            { answerText: "Vue 4", isCorrect: false },
-            { answerText: "Vue 3", isCorrect: true },
-          ],
-        },
-        {
-          questionText: "Is vue an OpenSource Library?",
-          answerOptions: [
-            { answerText: "True", isCorrect: true },
-            { answerText: "False", isCorrect: false },
-          ],
-        },
-        {
           questionText:
-            "Which of the following is a Full Javascript Frramework",
+            "Consegue identificar através desta vídeo qual o filme ‘James Bond’ ?",
           answerOptions: [
-            { answerText: "Vue", isCorrect: false },
-            { answerText: "node", isCorrect: false },
-            { answerText: "react", isCorrect: false },
-            { answerText: "Angular", isCorrect: true },
+            { answerText: "Skyfall", isCorrect: false },
+            { answerText: "Spectre", isCorrect: false },
+            { answerText: "Quantum of Solace", isCorrect: false },
+            { answerText: "No time to Die", isCorrect: true, onclick: "green" },
           ],
         },
         {
-          questionText: "Composition API can be used on which version?",
+          questionText: "Que título recebeu o primeiro filme de ‘James Bond’ ?",
           answerOptions: [
-            { answerText: "Vue 5", isCorrect: false },
-            { answerText: "Vue 2 Only", isCorrect: false },
-            { answerText: "Vue 3 Only", isCorrect: false },
-            { answerText: "Both Vue 2 and Vue 3", isCorrect: true },
+            {
+              answerText: "007 A serviço secreto da majestade",
+              isCorrect: false,
+            },
+            { answerText: "007 Na mira dos Assassinos", isCorrect: false },
+            { answerText: "007 contra o satânico Dr No", isCorrect: true },
+            { answerText: "007 Permissão para matar", isCorrect: false },
+          ],
+        },
+        {
+          questionText: "Quantos atores interpretaram o agente ‘James Bond’ ?",
+          answerOptions: [
+            { answerText: "6", isCorrect: true },
+            { answerText: "4", isCorrect: false },
+            { answerText: "5", isCorrect: false },
+            { answerText: "7", isCorrect: false },
+          ],
+        },
+        {
+          questionText: "Qual ator fez apenas um filme ? ",
+          answerOptions: [
+            { answerText: "Pierce Brosnan", isCorrect: false },
+            { answerText: "George Lazenby", isCorrect: true },
+            { answerText: "Timothy Dalton", isCorrect: false },
+            { answerText: "Sean Connery", isCorrect: false },
+          ],
+        },
+        {
+          questionText: "Como se chama o Chefe de Bond ? ",
+          answerOptions: [
+            { answerText: "V", isCorrect: false },
+            { answerText: "T", isCorrect: false },
+            { answerText: "M", isCorrect: true },
+            { answerText: "W", isCorrect: false },
+          ],
+        },
+        {
+          questionText: "Quem fornece as armas e os equipamentos a Bond ? ",
+          answerOptions: [
+            { answerText: "P", isCorrect: false },
+            { answerText: "Z", isCorrect: false },
+            { answerText: "Q", isCorrect: true },
+            { answerText: "V", isCorrect: false },
           ],
         },
       ],
@@ -452,14 +449,10 @@ export default {
       }
       if (nextQuestion < this.questions.length) {
         this.currentQuestion = nextQuestion;
-        // this.$store.state.questionAttended = this.currentQuestion;
-        // localStorage.setItem('qattended', this.currentQuestion)
         this.countDown = 30;
         this.countDownTimer();
       } else {
-        // localStorage.removeItem('qattended')
         this.showScore = true;
-        // localStorage.setItem('testComplete',this.showScore)
       }
     },
     countDownTimer() {
@@ -586,6 +579,13 @@ export default {
   border-radius: 2px;
   padding: 50px 70px;
   border: 1px solid #ffffff;
+}
+
+.rating {
+  width: 10%;
+  border-radius: none;
+  border: 0px;
+  position: relative;
 }
 
 .comments-title {

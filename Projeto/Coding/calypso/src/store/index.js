@@ -264,6 +264,10 @@ export default new Vuex.Store({
           stars: "test4"
         },
       ],
+    comments: localStorage.comments ? JSON.parse(localStorage.comments) : [{
+      comment: "Este quiz foi demasiado fácil",
+      rating: "3",
+    }],
     loggedUser: null,
     visitingFilme: "",
   },
