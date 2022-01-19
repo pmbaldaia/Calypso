@@ -303,17 +303,6 @@ export default new Vuex.Store({
       state.quizzes.push(payload);
       localStorage.quizzes = JSON.stringify(state.quizzes);
     },
-    SET_WANT_QUIZ(state, payload) {
-      state.quizzes.map((quiz) => {
-        if (quiz.name === payload) {
-          quiz.quantity--;
-          quiz.children.push(state.loggedUser.username);
-          state.loggedUser.quizzes = 1;
-        }
-      });
-      localStorage.quizzes = JSON.stringify(state.quizzes);
-      localStorage.loggedUser = JSON.stringify(state.loggedUser);
-    },
 
     SET_ACTUAL_FILME(state, payload) {
       state.visitingFilme = payload
