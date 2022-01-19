@@ -117,7 +117,7 @@
                   <b-modal id="modalaviso" hide-footer>
                     <template #modal-title>
                       AVISO
-                      <u style="color: #ed6a5a">{{ getLoggedUser.username }}</u>
+                      <u style="color: #ed6a5a"></u>
                     </template>
                     <div class="d-block text-center">
                       <b-alert show variant="danger" class="text-center"
@@ -145,9 +145,7 @@
                   </a>
                 </div>
                 <div class="be-comment-content">
-                  <span class="be-comment-name">
-                    <a href="">Ravi Sah</a>
-                  </span>
+                  <span class="be-comment-name"> </span>
                   <span class="be-comment-time">
                     <i class="fa fa-clock-o"></i>
                     12 janeiro, 2022 pelas 9:30h
@@ -158,13 +156,11 @@
                     mauris, vel volutpat urna hendrerit id. Curabitur rutrum
                     dolor gravida turpis tristique efficitur.
                   </p>
-                  <div class="be-comment-content">
-                    <span class="fa fa-star star-active mx-1"></span>
-                    <span class="fa fa-star star-active mx-1"></span>
-                    <span class="fa fa-star star-active mx-1"></span>
-                    <span class="fa fa-star star-active mx-1"></span>
-                    <span class="fa fa-star star-inactive mx-1"></span>
-                  </div>
+                  <b-form-rating
+                    v-model="rating"
+                    variant="warning"
+                    class="mb-2 rating"
+                  ></b-form-rating>
                 </div>
               </div>
 
@@ -193,6 +189,11 @@
                     lorem non ant. Proin ut ornare lectus, vel eleifend est.
                     Fusce hendrerit dui in turpis tristique blandit.
                   </p>
+                  <b-form-rating
+                    v-model="rating1"
+                    variant="warning"
+                    class="mb-2 rating"
+                  ></b-form-rating>
                 </div>
               </div>
               <div class="be-comment">
@@ -217,6 +218,11 @@
                     Cras magna nunc, cursus lobortis luctus at, sollicitudin vel
                     neque. Duis eleifend lorem non ant
                   </p>
+                  <b-form-rating
+                    v-model="rating2"
+                    variant="warning"
+                    class="mb-2 rating"
+                  ></b-form-rating>
                 </div>
               </div>
             </div>
@@ -322,6 +328,9 @@ export default {
   name: "filmeDetalhes",
   data() {
     return {
+      rating: 3,
+      rating1: 5,
+      rating2: 4,
       actualFilme: [],
       status: "Marcar como visto",
     };
@@ -418,12 +427,43 @@ export default {
   clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%);
 }
 
+.quizbutton {
+  background: #023047;
+  color: #fff;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: #023047;
+  font-family: Rubik;
+  width: 200px;
+  height: 50px;
+  position: relative;
+}
+
+.buttonvoltar {
+  background: #ed6a5a;
+  color: #fff;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: #ed6a5a;
+  font-family: Rubik;
+  width: 200px;
+  height: 50px;
+  padding-top: 12px;
+}
+
 .be-comment-block {
   margin-bottom: 50px !important;
   border: 1px solid #edeff2;
   border-radius: 2px;
   padding: 50px 70px;
   border: 1px solid #ffffff;
+}
+
+.rating {
+  width: 10%;
+  border-radius: none;
+  border: 0px;
+  position: relative;
 }
 
 .comments-title {

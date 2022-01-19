@@ -188,9 +188,7 @@
                 </a>
               </div>
               <div class="be-comment-content">
-                <span class="be-comment-name">
-                  <a href="">Ravi Sah</a>
-                </span>
+                <span class="be-comment-name"> </span>
                 <span class="be-comment-time">
                   <i class="fa fa-clock-o"></i>
                   12 janeiro, 2022 pelas 9:30h
@@ -234,6 +232,11 @@
                   lorem non ant. Proin ut ornare lectus, vel eleifend est. Fusce
                   hendrerit dui in turpis tristique blandit.
                 </p>
+                <b-form-rating
+                  v-model="rating1"
+                  variant="warning"
+                  class="mb-2 rating"
+                ></b-form-rating>
               </div>
             </div>
             <div class="be-comment">
@@ -258,6 +261,11 @@
                   Cras magna nunc, cursus lobortis luctus at, sollicitudin vel
                   neque. Duis eleifend lorem non ant
                 </p>
+                <b-form-rating
+                  v-model="rating2"
+                  variant="warning"
+                  class="mb-2 rating"
+                ></b-form-rating>
               </div>
             </div>
           </div>
@@ -365,6 +373,8 @@ export default {
   data() {
     return {
       rating: 3,
+      rating1: 5,
+      rating2: 4,
       currentQuestion: 0,
       showScore: false,
       score: 0,
@@ -433,6 +443,7 @@ export default {
       ],
     };
   },
+
   computed: {
     ...mapGetters(["getLoggedUser"]),
   },
