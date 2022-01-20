@@ -181,7 +181,6 @@
                   <div>
                     <ul>
                       <li><a href="#">Sobre nós</a></li>
-                      <li><a href="#">Localização</a></li>
                       <li><a href="#">Política de Privacidade</a></li>
                       <li><a href="#">Termos de Utilização</a></li>
                       <li><a href="#">FAQs</a></li>

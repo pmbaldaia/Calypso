@@ -31,12 +31,15 @@
             >
           </li>
           <li>
-            <router-link class="link active" :to="{ name: 'perfil' }"
-              >Perfil</router-link
-            >
+            <router-link class="link active" :to="{ name: 'perfil' }">{{
+              getLoggedUser.username
+            }}</router-link>
           </li>
           <li>
-            <router-link class="link" @click="logout">LOGOUT</router-link>
+            <b-button variant="outline-info" @click="logout">
+              <b-icon icon="door-closed"></b-icon>
+              Logout
+            </b-button>
           </li>
         </ul>
       </nav>

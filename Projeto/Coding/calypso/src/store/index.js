@@ -12,7 +12,11 @@ export default new Vuex.Store({
         password: "admin",
         email: "admin@admin.pt",
         type: "admin",
-        location: "admin",
+      }, {
+        username: "teste",
+        password: "teste",
+        email: "teste@gmail.com",
+        type: "user"
       }, ],
     games: localStorage.games ?
       JSON.parse(localStorage.games) : [{

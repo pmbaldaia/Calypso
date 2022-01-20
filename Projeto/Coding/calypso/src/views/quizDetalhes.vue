@@ -32,7 +32,7 @@
           </li>
           <li>
             <router-link class="link" :to="{ name: 'login' }"
-              >Perfil</router-link
+              >Login</router-link
             >
           </li>
           <li>
@@ -86,6 +86,7 @@
                 <b-button class="quizbutton" @click="startQuizFunc()"
                   >JOGAR</b-button
                 ><b-button
+                  style="margin-left: 30px"
                   class="buttonvoltar"
                   :to="{ name: 'quizzesCatalogo' }"
                   >VOLTAR</b-button
@@ -188,7 +189,7 @@
                 </a>
               </div>
               <div class="be-comment-content">
-                <span class="be-comment-name"> </span>
+                <span class="be-comment-name"> Teste</span>
                 <span class="be-comment-time">
                   <i class="fa fa-clock-o"></i>
                   12 janeiro, 2022 pelas 9:30h
@@ -489,7 +490,7 @@ export default {
 }
 
 .card.comentarios {
-  box-shadow: 5px 5px 10px #ffb72b;
+  box-shadow: 5px 5px 10px gray;
 }
 .card-q {
   min-width: 80%;

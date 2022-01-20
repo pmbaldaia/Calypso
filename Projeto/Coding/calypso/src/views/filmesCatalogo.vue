@@ -232,9 +232,13 @@ export default {
 }
 
 .cardspadding {
+  padding-top: 40px;
   padding-left: 28px;
 }
 
+.card {
+  border: 2px solid #ffb703;
+}
 h3 {
   padding-left: 45px;
   color: #023047;
