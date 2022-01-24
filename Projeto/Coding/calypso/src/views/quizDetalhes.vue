@@ -189,7 +189,7 @@
                 </a>
               </div>
               <div class="be-comment-content">
-                <span class="be-comment-name"> Teste</span>
+                <span class="be-comment-name"> </span>
                 <span class="be-comment-time">
                   <i class="fa fa-clock-o"></i>
                   12 janeiro, 2022 pelas 9:30h
