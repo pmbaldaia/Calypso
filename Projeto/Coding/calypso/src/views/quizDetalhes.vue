@@ -30,13 +30,15 @@
               >SÉRIES</router-link
             >
           </li>
-          <li>
-            <router-link class="link" :to="{ name: 'login' }"
-              >Login</router-link
-            >
+          <li v-if="getLoggedUser != null">
+            <router-link class="link active" :to="{ name: 'perfil' }">{{
+              getLoggedUser.username
+            }}</router-link>
           </li>
-          <li>
-            <router-link class="link"></router-link>
+          <li v-else>
+            <router-link class="link" :to="{ name: 'login' }"
+              >LOGIN<img class="icon-login" src="@/assets/icons/login.png"
+            /></router-link>
           </li>
           <!-- <li>
             <router-link class="link" @click="logout">LOGOUT</router-link>
@@ -189,7 +191,7 @@
                 </a>
               </div>
               <div class="be-comment-content">
-                <span class="be-comment-name"> </span>
+                <span class="be-comment-name"> Teste</span>
                 <span class="be-comment-time">
                   <i class="fa fa-clock-o"></i>
                   12 janeiro, 2022 pelas 9:30h

@@ -5,18 +5,99 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    quizzes: localStorage.quizzes ? JSON.parse(localStorage.quizzes) : [],
-    users: localStorage.users ?
-      JSON.parse(localStorage.users) : [{
+    quizzes: localStorage.quizzes ? JSON.parse(localStorage.quizzes) : [
+      {
+        name: "name",
+        quantity: 2,
+        questions: [
+          {
+            questionText:
+              "Consegue identificar através desta vídeo qual o filme ‘James Bond’ ?",
+            answerOptions: [
+              { answerText: "Skyfall", isCorrect: false },
+              { answerText: "Spectre", isCorrect: false },
+              { answerText: "Quantum of Solace", isCorrect: false },
+              { answerText: "No time to Die", isCorrect: true, onclick: "green" },
+            ],
+          },
+          {
+            questionText: "Que título recebeu o primeiro filme de ‘James Bond’ ?",
+            answerOptions: [
+              {
+                answerText: "007 A serviço secreto da majestade",
+                isCorrect: false,
+              },
+              { answerText: "007 Na mira dos Assassinos", isCorrect: false },
+              { answerText: "007 contra o satânico Dr No", isCorrect: true },
+              { answerText: "007 Permissão para matar", isCorrect: false },
+            ],
+          },
+          {
+            questionText: "Quantos atores interpretaram o agente ‘James Bond’ ?",
+            answerOptions: [
+              { answerText: "6", isCorrect: true },
+              { answerText: "4", isCorrect: false },
+              { answerText: "5", isCorrect: false },
+              { answerText: "7", isCorrect: false },
+            ],
+          },
+          {
+            questionText: "Qual ator fez apenas um filme ? ",
+            answerOptions: [
+              { answerText: "Pierce Brosnan", isCorrect: false },
+              { answerText: "George Lazenby", isCorrect: true },
+              { answerText: "Timothy Dalton", isCorrect: false },
+              { answerText: "Sean Connery", isCorrect: false },
+            ],
+          },
+          {
+            questionText: "Como se chama o Chefe de Bond ? ",
+            answerOptions: [
+              { answerText: "V", isCorrect: false },
+              { answerText: "T", isCorrect: false },
+              { answerText: "M", isCorrect: true },
+              { answerText: "W", isCorrect: false },
+            ],
+          },
+          {
+            questionText: "Quem fornece as armas e os equipamentos a Bond ? ",
+            answerOptions: [
+              { answerText: "P", isCorrect: false },
+              { answerText: "Z", isCorrect: false },
+              { answerText: "Q", isCorrect: true },
+              { answerText: "V", isCorrect: false },
+            ],
+          },
+        ],
+      }],
+    users: localStorage.users ? JSON.parse(localStorage.users) : [{
         username: "admin",
         password: "admin",
         email: "admin@admin.pt",
         type: "admin",
+        avancado: "yes",
+        pontos: 150
       }, {
         username: "teste",
         password: "teste",
         email: "teste@gmail.com",
-        type: "user"
+        type: "user",
+        avancado: "yes",
+        pontos: 480,
+      },{
+        username: "teste2",
+        password: "teste2",
+        email: "teste2@gmail.com",
+        type: "user",
+        avancado: "no",
+        pontos: 980,
+      },{
+        username: "teste3",
+        password: "teste3",
+        email: "teste3@gmail.com",
+        type: "user",
+        avancado: "no",
+        pontos: 680,
       }, ],
     games: localStorage.games ?
       JSON.parse(localStorage.games) : [{
@@ -268,7 +349,31 @@ export default new Vuex.Store({
           stars: "test4"
         },
       ],
-
+    badges:localStorage.badges ?
+    JSON.parse(localStorage.badges) : [{
+      name:"Horror I",
+      image:require('@/assets/badges/badge.png'),
+      type:"Horror",
+      requesito: 1000,
+    },
+    {
+      name:"Horror II",
+      image:require('@/assets/badges/badge.png'),
+      type:"Horror",
+      requesito: 1000,
+    },
+    {
+      name:"Horror III",
+      image:require('@/assets/badges/badge.png'),
+      type:"Horror",
+      requesito: 1000,
+    },
+    {
+      name:"Horror IV",
+      image:require('@/assets/badges/badge.png'),
+      type:"Horror",
+      requesito: 1000,
+    }],
     loggedUser: null,
     visitingFilme: "",
   },
@@ -283,12 +388,14 @@ export default new Vuex.Store({
     isQuiznameAvailable: (state) => (name) =>
       state.quizzes.every((quiz) => quiz.name !== name),
 
+    getUsers: (state) => state.users,
     getQuizzes: (state) => state.quizzes,
     getGames: (state) => state.games,
     getFilmes: (state) => state.filmes,
     getFilmeshomepage: (state) => state.filmeshomepage,
     getSeries: (state) => state.series,
     setVisitingFilme: (state) => state.visitingFilme,
+    getBadges: (state) => state.badges,
   },
   mutations: {
     SET_LOGGED_USER(state, payload) {

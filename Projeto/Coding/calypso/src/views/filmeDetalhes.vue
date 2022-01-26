@@ -30,7 +30,12 @@
               >SÉRIES</router-link
             >
           </li>
-          <li>
+          <li v-if="getLoggedUser != null">
+            <router-link class="link active" :to="{ name: 'perfil' }">{{
+              getLoggedUser.username
+            }}</router-link>
+          </li>
+          <li v-else>
             <router-link class="link" :to="{ name: 'login' }"
               >LOGIN<img class="icon-login" src="@/assets/icons/login.png"
             /></router-link>
@@ -59,6 +64,7 @@
             ></b-embed>
             <div>
               <br />
+              <b-img :src="actualFilme[0].image"></b-img>
               <b-form-checkbox
                 style="color: #023047; float: right"
                 id="checkbox"
@@ -71,12 +77,10 @@
               </b-form-checkbox>
             </div>
             <h1>Sinopse</h1>
-            <p align="justify">
+            <p>
               {{ actualFilme[0].sinopse }}
             </p>
             <br />
-            <h1>Imagem do filme</h1>
-            <b-img :src="actualFilme[0].image" style="width: 50%"></b-img>
             <h1>Diretor</h1>
             <p>{{ actualFilme[0].director }}</p>
             <br />
@@ -88,7 +92,6 @@
           </b-col>
         </b-row> </b-container
       ><br />
-      <div class="middletemplate"></div>
       <b-container>
         <b-card style="max-width: 20rem" class="mb-5 comentarios"
           ><link
@@ -338,7 +341,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getFilmes", "setVisitingFilme"]),
+    ...mapGetters(["getFilmes", "setVisitingFilme", "getLoggedUser"]),
   },
   methods: {
     ...mapMutations(["SET_ACTUAL_FILME"]),
@@ -356,14 +359,6 @@ export default {
 </script>
 
 <style scoped>
-.middletemplate {
-  height: 40px;
-  width: 50%;
-  margin-bottom: 50px;
-  background: linear-gradient(to left, #ffb703 10%, #ed6a5a 30%);
-  clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%);
-}
-
 .tituloquiz {
   background: linear-gradient(to left, #ffb703 10%, #ed6a5a 30%);
   clip-path: polygon(0 0, calc(100% - 50px) 0, 70% 200%, 0% 100%);

@@ -30,7 +30,12 @@
               >SÉRIES</router-link
             >
           </li>
-          <li>
+          <li v-if="getLoggedUser != null">
+            <router-link class="link active" :to="{ name: 'perfil' }">{{
+              getLoggedUser.username
+            }}</router-link>
+          </li>
+          <li v-else>
             <router-link class="link" :to="{ name: 'login' }"
               >LOGIN<img class="icon-login" src="@/assets/icons/login.png"
             /></router-link>
@@ -203,7 +208,7 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "quizzesCatalogo",
   computed: {
-    ...mapGetters(["getGames"]),
+    ...mapGetters(["getGames", "getLoggedUser"]),
   },
   methods: {
     ...mapMutations(["SET_ACTUAL_GAME"]),

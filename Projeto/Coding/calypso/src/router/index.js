@@ -9,6 +9,11 @@ import FilmeDetalhes from "../views/filmeDetalhes.vue";
 import SeriesCatalogo from "../views/seriesCatalogo.vue";
 import QuizzesCatalogo from "../views/quizzesCatalogo.vue";
 import QuizDetalhes from "../views/quizDetalhes.vue";
+import perfilMudarDados from "../views/PerfilDados.vue";
+import perfilBadges from "../views/PerfilBadges.vue";
+import perfilCreateQuizz from "../views/PerfilQuizz.vue";
+import perfilRanking from "../views/PerfilRanking.vue";
+
 
 import store from "../store/index.js";
 
@@ -60,7 +65,43 @@ const routes = [{
     path: "/quizDetalhes",
     name: "quizDetalhes",
     component: QuizDetalhes,
+    meta: {
+      requiresAuth: true,
+    },
   },
+  {
+    path: "/perfilRanking",
+    name: "perfilRanking",
+    component: perfilRanking,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/perfilBadges",
+    name: "perfilBadges",
+    component: perfilBadges,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/perfilCreateQuizz",
+    name: "perfilCreateQuizz",
+    component: perfilCreateQuizz,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/perfilMudarDados",
+    name: "perfilMudarDados",
+    component: perfilMudarDados,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  
 ];
 
 const router = new VueRouter({

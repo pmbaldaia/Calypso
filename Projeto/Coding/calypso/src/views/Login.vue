@@ -60,7 +60,13 @@
                 <h5>Iniciar Sessão</h5>
                 <img
                   src="https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png"
-                  class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                  class="
+                    img-fluid
+                    profile-image-pic
+                    img-thumbnail
+                    rounded-circle
+                    my-3
+                  "
                   width="100px"
                 />
               </div>
@@ -128,7 +134,7 @@ export default {
     document.head.appendChild(externalScript);
   },
   computed: {
-    ...mapGetters(["isUser"]),
+    ...mapGetters(["isUser", "getLoggedUser"]),
   },
   methods: {
     login() {
