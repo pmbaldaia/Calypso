@@ -65,8 +65,8 @@
         <tr>
           <th>#</th>
           <th>NOME</th>
-          <th>QUANTIDADE</th>
-          <th>CRIANÇAS</th>
+          <th>QUIZZES</th>
+          <th>PERGUNTAS</th>
         </tr>
         <tr v-for="(quiz, index) in rankPeople" :key="index">
           <td>{{ index + 1 }}</td>

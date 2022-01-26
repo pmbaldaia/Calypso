@@ -65,8 +65,8 @@
         <tr>
           <th>#</th>
           <th>NOME</th>
-          <th>QUANTIDADE</th>
-          <th>CRIANÇAS</th>
+          <th>QUIZZES</th>
+          <th>PERGUNTAS</th>
         </tr>
         <tr v-for="(quiz, index) in getQuizzes" :key="index">
           <td>{{ index + 1 }}</td>
@@ -153,7 +153,7 @@
         </div>
         <div class="col-md-8 border-right">
           <div class="p-3 py-5">
-            <h2 style="color: white">Owned badges</h2>
+            <h2 style="color: white">Badges</h2>
             <b-row no-gutters class="cardspadding">
               <b-col
                 class="col-2"
