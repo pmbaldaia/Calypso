@@ -1,5 +1,14 @@
 <template>
-  <div class="series">
-    <h1>This is an series page</h1>
+  <div>
+    <SearchBar />
+    <h2 class="headers">Séries</h2>
   </div>
 </template>
+<script>
+import SearchBar from "../components/SearchBar.vue";
+export default {
+  components: {
+    SearchBar,
+  },
+};
+</script>

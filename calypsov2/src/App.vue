@@ -2,6 +2,7 @@
   <div id="app">
     <nav-bar-comp />
     <router-view />
+    <p></p>
     <Footer />
   </div>
 </template>
@@ -35,8 +36,16 @@ body {
 }
 
 #app {
+  margin: 0;
+  padding: 0;
   font-family: Rubik lighter;
   text-align: center;
   color: #023047;
+}
+.headers {
+  width: 32%;
+  color: white;
+  background: linear-gradient(to left, #ffb703 10%, #ed6a5a 30%);
+  clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%);
 }
 </style>

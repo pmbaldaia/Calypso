@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkcalypsov2"]=self["webpackChunkcalypsov2"]||[]).push([[720],{720:function(e,s,n){n.r(s),n.d(s,{default:function(){return c}});var t=function(){var e=this,s=e.$createElement;e._self._c;return e._m(0)},l=[function(){var e=this,s=e.$createElement,n=e._self._c||s;return n("div",{staticClass:"series"},[n("h1",[e._v("This is an series page")])])}],r=n(1),u={},a=(0,r.Z)(u,t,l,!1,null,null,null),c=a.exports}}]);
-//# sourceMappingURL=720.72b2c1bb.js.map

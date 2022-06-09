@@ -69,21 +69,14 @@ export default {
   font-family: Rubik ligher;
 }
 
-.headers {
-  width: 22%;
-  color: white;
-  background: linear-gradient(to left, #ffb703 10%, #ed6a5a 30%);
-  clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 0% 100%);
-}
-
 .carousel {
   width: 100%;
-  height: 50%; /*
-  margin-left: 5%; */
+  height: 50%;
 }
 
 .carousel-indicators li {
   background-color: #ffb703;
+  align-content: center;
 }
 
 .carousel img {

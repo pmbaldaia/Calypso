@@ -10,6 +10,20 @@ import {
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import {
+  BContainer
+} from 'bootstrap-vue'
+Vue.component('b-container', BContainer)
+
+import {
+  FormPlugin
+} from 'bootstrap-vue'
+Vue.use(FormPlugin)
+
+import {
+  BForm
+} from 'bootstrap-vue'
+Vue.component('b-form', BForm)
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
