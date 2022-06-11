@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-    <h2>Painel de Controlo ADMIN</h2>
-    <Sidebar />
-    <Profile />
+    <h2 class="headers">Admin</h2>
+    <AdminProfile />
   </div>
 </template>
 
 <script>
-import Sidebar from "../components/Sidebar.vue";
-import Profile from "../components/Profile.vue";
+import AdminProfile from "../components/AdminProfile.vue";
 export default {
   components: {
-    Sidebar,
-    Profile,
+    AdminProfile,
   },
 };
 </script>
-
-<style></style>
