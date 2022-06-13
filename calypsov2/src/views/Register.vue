@@ -1,65 +1,61 @@
 <template>
   <div id="app">
-    <h2 class="headers">Registo</h2>
-    <div class="container">
-      <div class="grid">
-        <div class="row login">
-          <div class="col-md-6 offset-md-3">
-            <div class="card my-5">
-              <form class="card-body cardbody-color p-lg-5">
-                <div class="text-center">
-                  <h5>Registe-se aqui</h5>
-                  <img
-                    src="https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_960_720.png"
-                    alt=""
-                    class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                    width="80px"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    required
-                    class="form-control"
-                    placeholder="Utilizador"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    required
-                    class="form-control"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="password"
-                    required
-                    class="form-control"
-                    placeholder="Password"
-                  />
-                </div>
-                <div class="text-center">
-                  <button
-                    style="background-color: #0e1c36; color: #fff"
-                    type="submit"
-                    value="LOGIN"
-                    class="btn px-5 mb-5 w-100"
-                  >
-                    Registar
-                  </button>
-                </div>
-                <div class="form-text text-center mb-3 refs">
-                  Já tem conta?
-                  <router-link :to="'/login'">Inicie sessão aqui</router-link>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h2 class="headers">Registe-se aqui</h2>
+    <b-container class="login">
+      <b-avatar icon="people-fill" size="6em"></b-avatar>
+      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+        <b-form-group id="input-group-1" label="Utilizador" label-for="input-1">
+          <b-form-input
+            id="input-1"
+            v-model="form.username"
+            type="username"
+            placeholder="Utilizador"
+            required
+          ></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-group-2" label="Email" label-for="input-2">
+          <b-form-input
+            id="input-2"
+            v-model="form.email"
+            type="text"
+            placeholder="Email"
+            required
+          ></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-group-2" label="Password" label-for="input-2">
+          <b-form-input
+            id="input-2"
+            v-model="form.password"
+            type="password"
+            placeholder="Password"
+            required
+          ></b-form-input>
+        </b-form-group>
+
+        <b-form-group
+          id="input-group-2"
+          label="Confirmar Password"
+          label-for="input-2"
+        >
+          <b-form-input
+            id="input-2"
+            v-model="form.confirmPassword"
+            type="password"
+            placeholder="Confirmar Password"
+            required
+          ></b-form-input>
+        </b-form-group>
+
+        <br />
+        <b-button type="submit" variant="primary">Registar-se</b-button>
+        <b-button type="reset" variant="danger">Apagar Formulário</b-button>
+        <b-button href="login" variant="warning"
+          >Já tem conta? Clique aqui</b-button
+        ></b-form
+      >
+    </b-container>
   </div>
 </template>
 
@@ -67,45 +63,42 @@
 export default {
   data() {
     return {
-      showPassword: false,
-      password: null,
+      form: {
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      },
+      show: true,
     };
   },
-  computed: {
-    buttonLabel() {
-      return this.showPassword ? "Hide" : "Show";
-    },
-  },
   methods: {
-    toggleShow() {
-      this.showPassword = !this.showPassword;
+    onSubmit(event) {
+      event.preventDefault();
+      alert(JSON.stringify(this.form));
+    },
+    onReset(event) {
+      event.preventDefault();
+      this.form.username = "";
+      this.form.email = "";
+      this.form.password = "";
+      this.form.confirmPassword = "";
+      //botão reset
+      this.show = false;
+      this.$nextTick(() => {
+        this.show = true;
+      });
     },
   },
 };
 </script>
 
 <style>
-.grid {
-  background: linear-gradient(
-    -8deg,
-    rgba(235, 242, 250, 1) 10%,
-    rgba(235, 242, 250, 0.1) 90%
-  );
-  border-radius: 2em;
+.login {
+  background-color: rgb(235, 242, 250, 0.4);
+  border-radius: 10%;
 }
-.container {
-  padding-bottom: 30px;
-}
-.profile-image-pic {
-  height: 200px;
-  width: 200px;
-}
-.cardbody-color {
-  background-color: #ebf2fa;
-}
-.refs {
-  font-weight: bold;
-  font-size: auto;
-  color: #023047;
+.b-button {
+  margin: 10% !important;
 }
 </style>

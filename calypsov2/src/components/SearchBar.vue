@@ -31,8 +31,8 @@
       variant="outline primary"
       class="m-2 searchposition"
       type="submit"
-      >Search <b-icon-search /></b-button
-    >r
+      >Search <b-icon-search
+    /></b-button>
   </div>
 </template>
 
