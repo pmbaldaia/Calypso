@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1655240519359" clover="3.2.0">
+  <project timestamp="1655240519359" name="All files">
+    <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="13" coveredelements="11" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
+    <file name="api.js" path="C:\Users\joaof\Documents\tsiw 2ano\testing\IntegrationsA\functions\api.js">
+      <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="28" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>

@@ -1,0 +1,15 @@
+{
+  "name": "unitsa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coverage": "^0.4.1",
+    "jest": "^28.1.1"
+  }
+}

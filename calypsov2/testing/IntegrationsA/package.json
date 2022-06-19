@@ -1,0 +1,17 @@
+{
+  "name": "integrationsa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jest": "^28.1.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.20.1"
+  }
+}
